@@ -1,0 +1,21 @@
+# Ignore everything
+*
+
+# Except the following files:
+!.gitignore
+!*.ipynb
+!*.py
+
+# ..even if they are in sub-folders
+!*/
+
+# sync metadata and content
+!metadata/
+!metadata/*
+!metadata/transgenic_sections
+!metadata/transgenic_sections/*
+
+
+# Ignore jupyter nb checkpoints (which contains ipynb files)
+*.ipynb_checkpoints/
+*.ipynb_checkpoints/*
