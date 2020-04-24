@@ -19,4 +19,3 @@
 # Ignore jupyter nb checkpoints (which contains ipynb files)
 *.ipynb_checkpoints/
 *.ipynb_checkpoints/*
-.Rproj.user
