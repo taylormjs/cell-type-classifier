@@ -1,1 +1,1 @@
-# 6_874-Multimodal-DL
+# 6_874-Multimodal-DL: contains code and (possibly data) for our class project in MIT's 6.874 : Deep Learning in the Life Sciences
