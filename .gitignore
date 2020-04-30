@@ -5,7 +5,6 @@
 !.gitignore
 !*.ipynb
 !*.py
-!*.R
 
 # ..even if they are in sub-folders
 !*/
