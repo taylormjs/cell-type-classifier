@@ -28,6 +28,39 @@ def module_imported():
     print('module name : {} module package: {}'.format(__name__, __package__))
     
 module_imported()
+
+
+##############################################################
+############ SAVING AND LOADING PICKLE FILES #################
+##############################################################
+
+def write_zipped_pickle(obj, filename, protocol=-1):
+    """
+
+    :param obj:
+    :param filename:
+    :param protocol:
+    :return:
+    """
+    with gzip.open(filename, 'wb') as f:
+        pickle.dump(obj, f, protocol)
+
+
+def read_pickle(filename):
+    """
+    Read pickle file which may be zipped or not
+    :param filename:
+    :return:
+    """
+    try:
+        with gzip.open(filename, 'rb') as f:
+            loaded_object = pickle.load(f)
+            return loaded_object
+    except OSError:
+        with open(filename, 'rb') as f:
+            loaded_object = pickle.load(f)
+            return loaded_object
+    
     
     
 #####################################################
