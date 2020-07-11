@@ -4,10 +4,6 @@ title: 'Overview'
 ---
 
 
-<img src="images/pipeline_diagram2.png" width="600"/>
-
-
-
 ### Overview
 Multimodal single-cell datasets are a recent development that provide numerous opportunities for the application of advanced machine learning techniques. In this work we evaluate the informative value of unimodal and multimodal single-cell datasets in a cell-state classification task on the scRNA-seq and scATAC-seq output of the sci-CAR method applied to dexamethasone treated lung adenocarcinoma-derived A549 cells. We developed a neural net classifier and tested its accuracy on unimodal, Early Fusion Bimodal and scAI Bimodal integrations of the single-cell datasets to evaluate their informative content. This study also performs a novel application of Sufficient Input Subsets to determine modality informativeness as well as identify differentially-expressed genes. While we conclude that multimodal inputs do not provide additional informative content over unimodal scRNA-seq data, SIS was found to be a promising novel method of marker gene identification.
 
