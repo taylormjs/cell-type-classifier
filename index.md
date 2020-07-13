@@ -3,6 +3,7 @@ layout: default
 title: 'Overview'
 ---
 
+### Computational Pipeline:
 
 <img src="images/pipeline_diagram2.png" width="750"/>
 
@@ -17,20 +18,6 @@ Additionally, we aimed to know how informative each modality is in classificatio
 ### Motivation
 Leveraging multiple single-cell modalities may allow for better classification of cells by their cell type or cell state. Understanding how to classify cells is crucial to large-scale consortiums like the [Human Cell Atlas](https://www.humancellatlas.org/), [HUBMAP](https://commonfund.nih.gov/hubmap), and the [Cell Census Network](https://braininitiative.nih.gov/brain-programs/cell-census-network-biccn), among others.  Much work is still required, however, in using multi-modal techniques for improving classification.
 
-### Problem Statement
-
-
-
-### Contributions - maybe remove this part b/c it's redundant with the Overview Section
-In this work we were able to explore a number of novel applications of machine learning to single-cell omics data.
-- We evaluated the application of neural networks to unimodal and multimodal single-cell data 
-- We adding the interpretability of Sufficient Input Subsets to determine relevant informativeness of single-cell omis data features. 
-- We explored the value of Feature-Selection and Class-Balancing of the single-cell omics data 
-- We show that bimodal inputs may not have any additional advantage over training on sc-RNA-seq alone
-- Finally, SIS was also explored as a novel method of identifying marker or differentially-expressed genes of cell state
-
-
-
 
 ### Summary of Results
 
@@ -38,14 +25,14 @@ In this work we were able to explore a number of novel applications of machine l
 
 <img src="images/accuracy_table.png" width="400"/>
 
-This study explored the value of creating multimodal representations of single-cell omics data in a neural net classification task. Table \ref{accuracy_table} shows the accuracy of classifier on the different datasets. One method of multimodal integration we evaluated was Early Fusion Bimodal, which involved the concatenation of the unimodal data. We find that Bimodal concatenation fails to consistently outperform the RNA-seq data. The classifier run on the Early Fusion Bimodal datasets outperform the RNA-seq data for the non-feature-selected datasets and the low-dimensional representation of the data, however the improvement is small, 2.6\% and 1.5\% difference, respectively. In all other cases the RNA-seq dataset outperforms the Bimodal concatenation dataset. This seems to imply that the majority of the informative content is present in the mRNA expression and that there is only slightly more information provided by the inclusion of the ATAC-seq data into the Bimodal representation. These results indicate that RNA-seq may be informative enough to use for cell-type identification unimodally rather than leveraging bimodal representations. \\
+This study explored the value of creating multimodal representations of single-cell omics data in a neural net classification task. The table above shows the accuracy of each classifier on the different datasets. One method of multimodal integration we evaluated was Early Fusion Bimodal, which involved the concatenation of the unimodal data. We find that Bimodal concatenation fails to consistently outperform the RNA-seq data. The classifiers run on the Early Fusion Bimodal datasets only slightly outperform the RNA-seq data for the non-feature-selected datasets and the low-dimensional representation of the data. In all other cases the RNA-seq dataset outperforms the Bimodal concatenation dataset. This seems to imply that the majority of the informative content is present in the mRNA expression and that there is only slightly more information provided by the inclusion of the ATAC-seq data into the Bimodal representation. These results indicate that RNA-seq may be informative enough to use for cell-type identification unimodally rather than leveraging bimodal representations. 
 
-This work also compared the relatively simple Early Fusion Bimodal representations with the novel, complex scAI multimodal integration method designed for integrating single cell RNA-seq and ATAC-seq data. However, on the Class-Balanced datasets for both the Raw Data and the Low-Dimensional Data, the classifier accuracy for the Bimodal Datasets, 96.5\% for the Bimodal Raw Data concatenation and 95.5\% for the Bimodal Low-Dimensional concatenation, far outperforms that of the scAI Integration output, 55.6\%. Despite the complex learning methods employed by scAI in order to integrate multiple single cell-omics modalities and represent them lower dimensionally, the outputs seem ill-suited for cell-type classification via neural nets. Instead a computationally simpler method such as Early Fusion may be more optimal for neural net applications. \\
+This work also compared the relatively simple Early Fusion Bimodal representations with the novel, complex scAI multimodal integration method designed for integrating single cell RNA-seq and ATAC-seq data. However, on the Class-Balanced datasets for both the Raw Data and the Low-Dimensional Data, the classifier accuracy for the Bimodal Datasets, 96.5% for the Bimodal Raw Data concatenation and 95.5% for the Bimodal Low-Dimensional concatenation, far outperforms that of the scAI Integration output, 55.6%. Despite the complex learning methods employed by scAI in order to integrate multiple single cell-omics modalities and represent them lower dimensionally, the outputs seem ill-suited for cell-type classification via neural nets. Instead a computationally simpler method such as Early Fusion may be more optimal for neural net applications. 
 
 
 #### RNA-seq is more informative than ATAC-seq in cell-type identification
 
-We aimed to know which of the two modalities was more informative for classifying cells by cell state (i.e. amt of time treated with DEX). We found all Sufficient Input Subsets of features for each cell classified with high confidence ($P(class | data) \geq 0.7$). Given these disjoint subsets, we computed the percent of high-confident (HC) cells  that relied on each feature for each of the three classes (0 hr, 1 hr, & 3 hrs). The table below ranks these features and colors the feature name by the modality it came from. It's evident that features from RNA-seq are most needed to classify HC cells treated with DEX for 0 hrs and 3 hrs. Features generated from the ATAC-seq modality were most necessary to classify HC cells treated for 1 hr, yet most subsets also relied on features from RNA-seq as well. Together, this implies that features from both RNA-seq and ATAC-seq are necessary for classifying by cell state, yet RNA-seq is largely more informative than ATAC-seq for this classification task. 
+We aimed to know which of the two modalities was more informative for classifying cells by cell state (i.e. amt of time treated with DEX). We found all Sufficient Input Subsets of features for each cell classified with high confidence (P(class | data) >= 0.7). Given these disjoint subsets, we computed the percent of high-confident (HC) cells  that relied on each feature for each of the three classes (0 hr, 1 hr, & 3 hrs). The table below ranks these features and colors the feature name by the modality it came from. It's evident that features from RNA-seq are most needed to classify HC cells treated with DEX for 0 hrs and 3 hrs. Features generated from the ATAC-seq modality were most necessary to classify HC cells treated for 1 hr, yet most subsets also relied on features from RNA-seq as well. Together, this implies that features from both RNA-seq and ATAC-seq are necessary for classifying by cell state, yet RNA-seq is largely more informative than ATAC-seq for this classification task. 
 
 
 <img src="images/sis_importan_features.png" width="750"/>
