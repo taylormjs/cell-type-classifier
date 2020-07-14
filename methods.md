@@ -26,13 +26,13 @@ After the pre-processing and feature selection steps were completed, the dataset
 
 
 
-### subsection{Multimodal Integration}
+### Multimodal Integration
 
-#### subsubsection{Raw Data Early Fusion Representation}
+#### Raw Data Early Fusion Representation
 A joint representation of the two raw RNA-seq and ATAC-seq datasets were created for downstream analysis. This followed the methodology of early fusion which involved the concatenation of the ATAC-seq dataset to the RNA-seq dataset along the feature axis, resulting in a Bimodal concatenation dataset composed of 3225 cells and 53,946 features for the upsampled case and 2641 cells and 53,946 features for the base case. 
 
 
-#### subsubsection{Dimensionality Reduction and Low Dimension Early Fusion Representation}
+#### Dimensionality Reduction and Low Dimension Early Fusion Representation}
 Lower dimensional representations of the Raw Data datasets were created for early fusion as well as downstream analysis. The methods used in the Jin et al. study were followed to perform dimensionality reduction on each dataset. For the RNA-seq data, this study used the [Seurat](http://satijalab.org/seurat/) toolkit to perform dimensionality reduction, which involved performing Principal Component Analysis (PCA) to extract 30 principal components of the dataset. This work replicated this dimensionality reduction using the *scikitlearn.decomposition.PCA* library in Python. This resulted in a lower dimensional RCA-seq dataset of 3225 cells and 30 principal component features. This study used the [*Signac* toolkit](https://satijalab.org/signac/)in order to perform dimensionality reduction on the ATAC-seq dataset, due to the sparsity and almost binary nature of the data, this was performed via Singular Value Decomposition (SVD) where the dataset was reduced to 50 components. This work replicated this dimensionality reduction with the *scikitlearn.decomposition.TruncatedSVD* library in Python.  This resulted in a lower dimensional ATAC-seq dataset of 3225 cells and 50 SVD components. 
 
 Early Fusion was also applied to these lower dimensional datasets for downstream analysis. Again this involved a simple concatenation of the low-dimensional datasets along the feature axis, resulting in a Bimodal SVD-PCA dataset of 3225 cells and 80 features. 
