@@ -3,9 +3,6 @@ layout: default
 title: 'Overview'
 ---
 
-### Computational Pipeline:
-
-<img src="images/pipeline_diagram2.png" width="750"/>
 
 
 ### Overview
