@@ -41,7 +41,7 @@ Using the SIS method to understand which features most contribute to cell-state 
 
 The table below summarizes these results for HC cells classified as treated for 0 hr and 1 hr. No subsets were found for HC cells classified as 3 hr, preventing us from finding any additional marker genes beyond NFKBIA. 
 
-<img src="images/de_genes.png" width="350"/>
+<img src="images/de_genes.png" width="400"/>
 
 
 
