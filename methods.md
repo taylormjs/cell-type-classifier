@@ -61,7 +61,7 @@ Testing sets were made for each unimodal and bimodal input by holding out 10% fr
 ### Sufficient Input Subsets
 [Sufficient Input Subsets](https://arxiv.org/abs/1810.03805) is an interpretability method for understanding why a black-box model reaches a particular decision for examples *x* in **X**. 
 
-We used an [SIS tutorial in classifying MNIST digits] (https://github.com/google-research/google-research/blob/master/sufficient_input_subsets/tutorials/sis_mnist_tutorial.ipynb) as a reference for finding high-confidence (HC) cells that were classified with probability >=  0.7 and for finding SIS-collections of features needed to classify each HC cell. 
+We used an [SIS tutorial in classifying MNIST digits](https://github.com/google-research/google-research/blob/master/sufficient_input_subsets/tutorials/sis_mnist_tutorial.ipynb) as a reference for finding high-confidence (HC) cells that were classified with probability >=  0.7 and for finding SIS-collections of features needed to classify each HC cell. 
 
 After finding all HC cells assigned to each class for each dataset, we aggregated all features that were found in at least 1 SIS for any HC cell.  We then found the percentage of the HC cells that contain a SIS with each feature to compute feature importance scores.  For example, if there are 100 HC cells classified as DEX-treated for 1hr and the sc-RNA-seq gene SLC35F3 appears in an SIS for 75 of these, then the feature importance for SLC35F3 would be 75% for classifying cells as 1hr.  
 
